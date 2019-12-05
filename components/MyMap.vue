@@ -1,5 +1,7 @@
 <template>
+
   <div :class="['map-component', !noroute ? 'map-component-with-route' : 'map-component-no-route']">
+
 
   </div>
 </template>

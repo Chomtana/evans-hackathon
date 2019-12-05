@@ -66,6 +66,7 @@
 }
 
 .book-now-btn-container {
+
   text-align: center;
   margin-top: 16px;
   display: flex;

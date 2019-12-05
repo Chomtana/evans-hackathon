@@ -1,38 +1,45 @@
 
   
 <template>
-    <div class="container">
-      <div class="webcam-container">
-        <vue-web-cam
-            ref="webcam"
-            :device-id="deviceId"
-            width="100%"
-            hight="80%"
-            @started="onStarted"
-            @stopped="onStopped"
-            @error="onError"
-            @cameras="onCameras"
-            @camera-change="onCameraChange"
-        />   
 
-                  <div class="row">
-      
-                  </div>
+    <v-container Justify="center">
+            <v-card
+                color="#FF0000"
+            >
+            <vue-web-cam
+                ref="webcam"
+                :device-id="deviceId"
+                width="100%"
+                @started="onStarted"
+                @stopped="onStopped"
+                @error="onError"
+                @cameras="onCameras"
+                @camera-change="onCameraChange"
+            />
+            <v-card-title>Seat Code</v-card-title>
+    
+        <v-card-subtitle class="pb-0">EVANS51219</v-card-subtitle>
+    
+        <v-card-text class="text--primary">
+            <div> </div>
+            <div>License : FF01ET</div>
+            <div>Path : Rama4 - Chula</div>
+            <div>Seat : 30</div>
+        </v-card-text>
+        
+        <v-card-actions>
+            <v-btn
+            color="orange"
+            text
+            >
+            Scan
+            </v-btn>
+    
+        </v-card-actions>
+        
+        </v-card>
 
-                  <div class="row">
-                    eiei
-                  </div>
-                  <div class="row">
-                    eiei
-                  </div>
-                  <div class="row">
-                    eiei
-                  </div>
-                  <div class="row">
-                    eiei
-                  </div>
-      </div>
-    </div>
+    </v-container>
 </template>
 
 <script>
