@@ -6,16 +6,18 @@
             <v-card
                 color="#FF0000"
             >
-            <vue-web-cam
-                ref="webcam"
-                :device-id="deviceId"
-                width="100%"
-                @started="onStarted"
-                @stopped="onStopped"
-                @error="onError"
-                @cameras="onCameras"
-                @camera-change="onCameraChange"
-            />
+            <nuxt-link to="/success">
+                <vue-web-cam
+                    ref="webcam"
+                    :device-id="deviceId"
+                    width="100%"
+                    @started="onStarted"
+                    @stopped="onStopped"
+                    @error="onError"
+                    @cameras="onCameras"
+                    @camera-change="onCameraChange"
+                />
+            </nuxt-link>
             <v-card-title>Seat Code</v-card-title>
     
         <v-card-subtitle class="pb-0">EVANS51219</v-card-subtitle>

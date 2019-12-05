@@ -32,7 +32,7 @@
   
         </v-row>
     
-        <v-card-title style="justify-content: center;">Driver : Nattakit Kundum</v-card-title>
+        <v-card-title style="justify-content: center;">Driver : Nuttakit Kundum</v-card-title>
         <div>License : FF01ET</div>
         <div>Route : Rama4 - Chula</div>
       </v-card-text>

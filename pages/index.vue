@@ -1,99 +1,48 @@
-
-  
 <template>
-    <div class="container">
-      <div class="webcam-container">
-        <vue-web-cam
-            ref="webcam"
-            :device-id="deviceId"
-            width="100%"
-            hight="80%"
-            @started="onStarted"
-            @stopped="onStopped"
-            @error="onError"
-            @cameras="onCameras"
-            @camera-change="onCameraChange"
-        />   
-
-                  <div class="row">
+  <div class="booking-index-page">
+    <div>
+      <div style="text-align: center;">
+        <img src="@/static/logo.png" style="width: 30%;">
+      </div>
       
-                  </div>
+      <div style="text-align: center; display: flex; justify-content: center; align-items: center; font-size: 18pt; line-height: 175%;">
+        BUILT USING <br />
+        NEXTY API <br /> <br />
 
-                  <div class="row">
-                    eiei
-                  </div>
-                  <div class="row">
-                    eiei
-                  </div>
-                  <div class="row">
-                    eiei
-                  </div>
-                  <div class="row">
-                    eiei
-                  </div>
+        OUT OF TAXI! <br />
+        NO PROBLEM <br />
+        USE OUR APP <br />
+        AND CALL VAN! <br />
+        WITH 20% DISCOUNT! <br />
       </div>
     </div>
+
+    <nuxt-link to="/booking/select">
+      <div style="font-size: 20pt; padding: 18pt; background-color: darkred; text-align: center;">
+        BOOK NOW!
+      </div>
+    </nuxt-link>
+  </div>
 </template>
 
+<style lang="scss" scoped>
+  .booking-index-page {
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: auto 100px;
+  }
+</style>
+
 <script>
+import Logo from '~/components/Logo.vue'
+
 export default {
-    name: "App",
-    components: {
-    },
-    data() {
-        return {
-            img: null,
-            camera: null,
-            deviceId: null,
-            devices: []
-        };
-    },
-    computed: {
-        device: function() {
-            return this.devices.find(n => n.deviceId === this.deviceId);
-        }
-    },
-    watch: {
-        camera: function(id) {
-            this.deviceId = id;
-        },
-        devices: function() {
-            // Once we have a list select the first one
-            const [first, ...tail] = this.devices;
-            if (first) {
-                this.camera = first.deviceId;
-                this.deviceId = first.deviceId;
-            }
-        }
-    },
-    methods: {
-        onCapture() {
-            this.img = this.$refs.webcam.capture();
-        },
-        onStarted(stream) {
-            console.log("On Started Event", stream);
-        },
-        onStopped(stream) {
-            console.log("On Stopped Event", stream);
-        },
-        onStop() {
-            this.$refs.webcam.stop();
-        },
-        onStart() {
-            this.$refs.webcam.start();
-        },
-        onError(error) {
-            console.log("On Error Event", error);
-        },
-        onCameras(cameras) {
-            this.devices = cameras;
-            console.log("On Cameras Event", cameras);
-        },
-        onCameraChange(deviceId) {
-            this.deviceId = deviceId;
-            this.camera = deviceId;
-            console.log("On Camera Change Event", deviceId);
-        }
-    }
-};
+  components: {
+    Logo
+  },
+  data() {
+    return {};
+  },
+}
 </script>

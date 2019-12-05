@@ -48,9 +48,11 @@
     </div>
 
     <div class="pay-bottom">
-      <div class="pay-btn-container">
-        Check In
-      </div>
+      <nuxt-link to="/identify">
+        <div class="pay-btn-container">
+          Check In
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -95,6 +97,14 @@ export default {
       radios: 'radio-1',
       dialog: true
     }
+  },
+  asyncData() {
+    console.log("adsasdadsads");
+
+    return {};
+  },
+  mounted() {
+    console.log("xxxxx")
   }
 }
 </script>

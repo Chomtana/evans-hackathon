@@ -1,11 +1,14 @@
 <template>
   <div class="booking-index-page">
-    <div style="text-align: center; display: flex; justify-content: center; align-items: center; font-size: 18pt; line-height: 175%;">
-      OUT OF TAXI! <br />
-      NO PROBLEM <br />
-      USE OUR APP <br />
-      AND CALL VAN! <br />
-      WITH 20% DISCOUNT! <br />
+    <div>
+      <div style="text-align: center;">
+        <img src="@/static/logo.png">
+      </div>
+      
+      <div style="text-align: center; display: flex; justify-content: center; align-items: center; font-size: 18pt; line-height: 175%;">
+        BUILT USING <br />
+        NEXTY API
+      </div>
     </div>
 
     <nuxt-link to="/booking/select">
