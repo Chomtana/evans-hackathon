@@ -118,6 +118,17 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .evan-header {
+    background-color: #444444;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-top: -12px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
 </style>
 
 <script>

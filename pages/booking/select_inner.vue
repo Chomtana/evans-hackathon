@@ -31,9 +31,11 @@
       </div>
 
       <div class="book-now-btn-container">
-        <div class="book-now-btn">
-          Book Now : 30 Baht
-        </div>
+        <nuxt-link to="/booking/payment">
+          <div class="book-now-btn">
+            Book Now : 30 Baht
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -42,7 +44,7 @@
 <style lang="scss" scoped>
 .select-page-container {
   display: grid;
-  grid-template-rows: 60% calc(40% - 50px) 50px;
+  grid-template-rows: 65% calc(35% - 50px) 50px;
   height: calc(100% + 12px);
   margin-top: -12px;
 
@@ -64,12 +66,19 @@
 }
 
 .book-now-btn-container {
-  text-align: right;
+
+  text-align: center;
   margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .book-now-btn {
-  
+  background-color: darkred;
+  border-radius: 10px;
+  width: 200px;
+  padding: 12px;
 }
 </style>
 
