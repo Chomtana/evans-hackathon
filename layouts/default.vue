@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+    <!--<v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -56,13 +56,13 @@
       >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
-    </v-app-bar>
+    </v-app-bar>-->
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
+    <!--<v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
       temporary
@@ -84,9 +84,19 @@
       app
     >
       <span>&copy; 2019</span>
-    </v-footer>
+    </v-footer>-->
   </v-app>
 </template>
+
+<style lang="scss">
+  html,body, #__nuxt, #__layout, #app {
+    background-color: #DE4B43;
+
+    width: 100%;
+    height: 100%;
+  }
+  
+</style>
 
 <script>
 export default {
