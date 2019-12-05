@@ -89,13 +89,35 @@
 </template>
 
 <style lang="scss">
-  html,body, #__nuxt, #__layout, #app {
+  html,body, #__nuxt, #__layout, #app, .container, .container > * {
     background-color: #DE4B43;
 
     width: 100%;
     height: 100%;
   }
   
+  .map-container {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  #__layout .v-application a {
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .left-right-text {
+    display: flex;
+    justify-content: space-between;
+  }
 </style>
 
 <script>

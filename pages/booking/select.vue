@@ -1,11 +1,11 @@
 <template>
   <div class="select-page">
-    <div class="container">
+    <div class="select-page-container">
       <div>
         <div class="logo"></div>
 
-        <div>
-          Where are you want to go
+        <div style="text-align: center; font-size: 16pt;">
+          Where are you want to go?
         </div>
       </div>
 
@@ -15,32 +15,38 @@
 
       <div>
         <div class="route-list-container">
-          <div class="route-item">
-            <div class="route-item-tabean">
-              License Plate: AY1060
+          <nuxt-link to="/booking/select_inner">
+            <div class="route-item">
+              <div class="route-item-tabean">
+                License Plate: AY1060
+              </div>
+              <div class="route-item-route">
+                Rama -> Chula
+              </div>
             </div>
-            <div class="route-item-route">
-              Rama -> Chula
-            </div>
-          </div>
+          </nuxt-link>
 
-          <div class="route-item">
-            <div class="route-item-tabean">
-              License Plate: XC1060
+          <nuxt-link to="/booking/select_inner">
+            <div class="route-item">
+              <div class="route-item-tabean">
+                License Plate: XC1060
+              </div>
+              <div class="route-item-route">
+                Rama -> Jim Thompson
+              </div>
             </div>
-            <div class="route-item-route">
-              Rama -> Jim Thompson
-            </div>
-          </div>
+          </nuxt-link>
 
-          <div class="route-item">
-            <div class="route-item-tabean">
-              License Plate: AY1060
+          <nuxt-link to="/booking/select_inner">
+            <div class="route-item">
+              <div class="route-item-tabean">
+                License Plate: AY1060
+              </div>
+              <div class="route-item-route">
+                Rama -> Chula
+              </div>
             </div>
-            <div class="route-item-route">
-              Rama -> Chula
-            </div>
-          </div>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -48,19 +54,25 @@
 </template>
 
 <style lang="scss" scoped>
-.container {
+.select-page-container {
   display: grid;
-  grid-template-rows: 200px 60% 40%;
+  grid-template-rows: 50px 60% 40%;
+  height: 100%;
 }
 
 .route-item {
-  padding: 8px;
-  margin-left: -24px;
-  margin-right: -24px;
+  padding: 16px;
+  margin-left: -12px;
+  margin-right: -12px;
   padding-left: 24px;
   padding-right: 24px;
   background-color: darkred;
   border-bottom: 1px solid gray;
+
+  .route-item-tabean {
+    font-weight: bold;
+    font-size: 16pt;
+  }
 }
 </style>
 
