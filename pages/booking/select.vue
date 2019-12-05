@@ -5,7 +5,7 @@
         <div class="logo"></div>
 
         <div style="text-align: center; font-size: 16pt;">
-          Where are you want to go?
+          Where do you want to go?
         </div>
       </div>
 
