@@ -1,92 +1,99 @@
+
+  
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
+    <div class="container">
+      <div class="webcam-container">
+        <vue-web-cam
+            ref="webcam"
+            :device-id="deviceId"
+            width="100%"
+            hight="80%"
+            @started="onStarted"
+            @stopped="onStopped"
+            @error="onError"
+            @cameras="onCameras"
+            @camera-change="onCameraChange"
+        />   
+
+                  <div class="row">
+      
+                  </div>
+
+                  <div class="row">
+                    eiei
+                  </div>
+                  <div class="row">
+                    eiei
+                  </div>
+                  <div class="row">
+                    eiei
+                  </div>
+                  <div class="row">
+                    eiei
+                  </div>
       </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+    </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+    name: "App",
+    components: {
+    },
+    data() {
+        return {
+            img: null,
+            camera: null,
+            deviceId: null,
+            devices: []
+        };
+    },
+    computed: {
+        device: function() {
+            return this.devices.find(n => n.deviceId === this.deviceId);
+        }
+    },
+    watch: {
+        camera: function(id) {
+            this.deviceId = id;
+        },
+        devices: function() {
+            // Once we have a list select the first one
+            const [first, ...tail] = this.devices;
+            if (first) {
+                this.camera = first.deviceId;
+                this.deviceId = first.deviceId;
+            }
+        }
+    },
+    methods: {
+        onCapture() {
+            this.img = this.$refs.webcam.capture();
+        },
+        onStarted(stream) {
+            console.log("On Started Event", stream);
+        },
+        onStopped(stream) {
+            console.log("On Stopped Event", stream);
+        },
+        onStop() {
+            this.$refs.webcam.stop();
+        },
+        onStart() {
+            this.$refs.webcam.start();
+        },
+        onError(error) {
+            console.log("On Error Event", error);
+        },
+        onCameras(cameras) {
+            this.devices = cameras;
+            console.log("On Cameras Event", cameras);
+        },
+        onCameraChange(deviceId) {
+            this.deviceId = deviceId;
+            this.camera = deviceId;
+            console.log("On Camera Change Event", deviceId);
+        }
+    }
+};
 </script>
