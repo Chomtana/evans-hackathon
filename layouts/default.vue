@@ -129,6 +129,10 @@
     padding-bottom: 12px;
   }
 
+
+.v-text-field__slot textarea {
+  color: black !important;
+}
 </style>
 
 <script>

@@ -1,8 +1,10 @@
 <template>
   <div class="arrive-in-page">
-    <div class="map-container" style="height: 100%;">
-      <my-map />
-    </div>
+    <nuxt-link to="/report">
+      <div class="map-container" style="height: 100%;">
+        <my-map />
+      </div>
+    </nuxt-link>
 
     <div class="arrive-in-container">
       <div style="font-size: 18pt;">

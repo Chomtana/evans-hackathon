@@ -28,12 +28,14 @@
         </v-card-text>
         
         <v-card-actions>
-            <v-btn
-            color="orange"
-            text
-            >
-            Scan
-            </v-btn>
+            <nuxt-link to="/success">
+                <v-btn
+                color="orange"
+                text
+                >
+                Scan
+                </v-btn>
+            </nuxt-link>
     
         </v-card-actions>
         

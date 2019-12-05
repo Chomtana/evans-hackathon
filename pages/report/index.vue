@@ -3,7 +3,6 @@
 <template>
     <v-card
       :loading="loading"
-      color="#FF0000"
     >
          <img 
                 src="@/static/effy.jpg" 
@@ -22,17 +21,18 @@
           class="mx-0"
         >
           <v-rating
-            :value="3.5"
+            :value="5"
             color="amber"
             dense
             half-increments
             readonly
-            size="14"
+            size="30"
+            style="display: flex; justify-content: center; width: 100%;"
           ></v-rating>
   
         </v-row>
     
-        <v-card-title>Driver : Nattakit kundam</v-card-title>
+        <v-card-title style="justify-content: center;">Driver : Nattakit Kundum</v-card-title>
         <div>License : FF01ET</div>
         <div>Route : Rama4 - Chula</div>
       </v-card-text>
@@ -43,7 +43,6 @@
       <v-card-text>
         <v-textarea
             background-color="grey lighten-2"
-            color="black"
         ></v-textarea>
        <v-card-actions>
         <v-btn
